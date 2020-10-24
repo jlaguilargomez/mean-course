@@ -6,11 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./post-create.component.css']
 })
 export class PostCreateComponent {
-  enteredValue: string;
+  enteredTitle: string;
+  enteredContent: string;
   newPost = 'NO CONTENT';
 
   onAddPost(postInput: string): void {
-    console.log(postInput);
-    this.newPost = postInput;
+    const post = {
+      title: this.enteredTitle,
+      content: this.enteredContent
+    };
   }
 }
