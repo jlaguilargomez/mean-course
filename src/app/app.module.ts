@@ -8,11 +8,12 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { AppComponent } from './app.component';
 import { PostCreateComponent } from '../app/posts/post-create/post-create.component';
+import { PostListComponent } from '../app/posts/post-list/post-list.component';
 import { HeaderComponent } from '../app/header/header.component';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, PostCreateComponent, HeaderComponent],
+  declarations: [AppComponent, PostCreateComponent, HeaderComponent, PostListComponent],
   imports: [BrowserModule, FormsModule, MatInputModule, MatButtonModule, MatCardModule, MatToolbarModule],
   providers: [],
   bootstrap: [AppComponent]
