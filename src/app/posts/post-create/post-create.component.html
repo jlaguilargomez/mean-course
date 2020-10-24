@@ -2,8 +2,8 @@
   <mat-form-field>
     <textarea matInput rows="10" [(ngModel)]="enteredValue"></textarea>
   </mat-form-field>
-  <button mat-raised-button color="accent" (click)="onAddPost('test')">Save Post</button>
+  <button mat-raised-button color="accent" (click)="onAddPost(enteredValue)">Save Post</button>
 </mat-card>
 
 <hr />
-<p>{{ enteredValue }}</p>
+<p>{{ newPost }}</p>
