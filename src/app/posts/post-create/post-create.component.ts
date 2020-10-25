@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output, TRANSLATIONS_FORMAT } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Post } from '../post.model';
+import { PostService } from '../posts.service';
 
 @Component({
   templateUrl: './post-create.component.html',
@@ -8,10 +9,10 @@ import { Post } from '../post.model';
   styleUrls: ['./post-create.component.css']
 })
 export class PostCreateComponent {
-  @Output() postCreated = new EventEmitter<Post>();
-
   enteredTitle: string;
   enteredContent: string;
+
+  constructor(private postService: PostService) {}
 
   onAddPost(form: NgForm): void {
     if (form.invalid) {
@@ -22,6 +23,6 @@ export class PostCreateComponent {
       content: form.value.content
     };
 
-    this.postCreated.emit(post);
+    this.postService.addPost(post.title, post.content);
   }
 }
